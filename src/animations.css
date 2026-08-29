@@ -1,0 +1,495 @@
+/* =========================================
+   PASSWORDSHIELD - MODERN ANIMATIONS
+   ========================================= */
+
+
+/* ---------- Animated Background ---------- */
+
+body {
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(0, 255, 200, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(70, 100, 255, 0.08),
+      transparent 30%
+    ),
+    #070b14 !important;
+
+  background-size: 200% 200%;
+
+  animation: backgroundMove 12s ease infinite;
+
+  overflow-x: hidden;
+}
+
+
+@keyframes backgroundMove {
+
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+
+}
+
+
+/* ---------- Page Entrance ---------- */
+
+#root {
+  animation: pageEnter 0.8s ease-out;
+}
+
+
+@keyframes pageEnter {
+
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* ---------- Cards ---------- */
+
+.analysis-card,
+.privacy-card,
+.privacy-monitor,
+.attack-card {
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+}
+
+
+/* Animated shine */
+
+.analysis-card::before,
+.privacy-card::before,
+.privacy-monitor::before,
+.attack-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 60%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.04),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.7s ease;
+
+}
+
+
+.analysis-card:hover::before,
+.privacy-card:hover::before,
+.privacy-monitor:hover::before,
+.attack-card:hover::before {
+
+  left: 130%;
+
+}
+
+
+/* ---------- Card Hover ---------- */
+
+.analysis-card:hover,
+.privacy-card:hover,
+.privacy-monitor:hover,
+.attack-card:hover {
+
+  transform: translateY(-5px);
+
+  border-color: rgba(80, 255, 200, 0.35) !important;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(0, 255, 200, 0.06);
+
+}
+
+
+/* ---------- Password Input ---------- */
+
+input[type="password"],
+input[type="text"] {
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
+
+}
+
+
+input[type="password"]:focus,
+input[type="text"]:focus {
+
+  outline: none !important;
+
+  border-color: #4fffc1 !important;
+
+  box-shadow:
+    0 0 0 3px rgba(79, 255, 193, 0.08),
+    0 0 25px rgba(79, 255, 193, 0.12);
+
+  transform: scale(1.005);
+
+}
+
+
+/* ---------- Security Score Bar ---------- */
+
+.entropy-fill {
+
+  animation:
+    scoreFill 1.4s cubic-bezier(.2,.8,.2,1);
+
+  box-shadow:
+    0 0 12px rgba(79, 255, 193, 0.35);
+
+}
+
+
+@keyframes scoreFill {
+
+  from {
+    width: 0 !important;
+  }
+
+}
+
+
+/* ---------- Privacy Status ---------- */
+
+.privacy-status span {
+
+  animation: privacyPulse 2s ease-in-out infinite;
+
+}
+
+
+@keyframes privacyPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 0.65;
+  }
+
+}
+
+
+/* ---------- Privacy Monitor ---------- */
+
+.privacy-monitor {
+
+  animation:
+    monitorAppear 0.8s ease-out 0.25s both;
+
+}
+
+
+@keyframes monitorAppear {
+
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* ---------- Attack Items ---------- */
+
+.attack-item {
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+
+}
+
+
+.attack-item:hover {
+
+  transform: translateX(6px);
+
+  background:
+    rgba(255, 255, 255, 0.025);
+
+}
+
+
+/* ---------- Safe Status ---------- */
+
+.attack-safe {
+
+  animation:
+    safeGlow 2.5s ease-in-out infinite;
+
+}
+
+
+@keyframes safeGlow {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.65;
+  }
+
+}
+
+
+/* ---------- Detected Status ---------- */
+
+.attack-danger {
+
+  animation:
+    dangerPulse 1.5s ease-in-out infinite;
+
+}
+
+
+@keyframes dangerPulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.55;
+  }
+
+}
+
+
+@keyframes dangerPulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.65;
+    transform: scale(1.03);
+  }
+
+}
+
+
+/* ---------- Recommendation Items ---------- */
+
+.recommendation {
+
+  transition:
+    transform 0.25s ease,
+    padding-left 0.25s ease;
+
+}
+
+
+.recommendation:hover {
+
+  transform: translateX(5px);
+
+  padding-left: 8px;
+
+}
+
+
+/* ---------- Autopsy Items ---------- */
+
+.autopsy-item {
+
+  transition:
+    transform 0.25s ease;
+
+}
+
+
+.autopsy-item:hover {
+
+  transform: translateX(5px);
+
+}
+
+
+/* ---------- Titles ---------- */
+
+h1,
+h2 {
+
+  letter-spacing: -0.4px;
+
+}
+
+
+h2 {
+
+  transition:
+    text-shadow 0.3s ease;
+
+}
+
+
+.analysis-card:hover h2,
+.privacy-card:hover h2,
+.attack-card:hover h2 {
+
+  text-shadow:
+    0 0 18px rgba(79, 255, 193, 0.15);
+
+}
+
+
+/* ---------- Buttons ---------- */
+
+button {
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+}
+
+
+button:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.25);
+
+}
+
+
+button:active {
+
+  transform: translateY(0);
+
+}
+
+
+/* ---------- Smooth Scrolling ---------- */
+
+html {
+
+  scroll-behavior: smooth;
+
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 900px) {
+
+  .privacy-monitor-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .privacy-monitor-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .attack-item {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+  }
+
+  .attack-status {
+
+    min-width: auto;
+
+  }
+
+}
+
+
+/* ---------- Accessibility ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+
+  }
+
+}
