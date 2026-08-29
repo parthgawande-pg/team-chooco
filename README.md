@@ -71,4 +71,92 @@ The application includes:
 - Mobile-friendly interface
 
 ---
+# 🔄 PasswordShield Workflow
 
+PasswordShield follows a privacy-first, client-side analysis pipeline. 
+The password is analyzed directly inside the user's browser without requiring 
+the password to be transmitted to a backend server.
+
+```text
+                         ┌──────────────────────┐
+                         │        USER          │
+                         │  Enters a Password   │
+                         └──────────┬───────────┘
+                                    │
+                                    ▼
+                         ┌──────────────────────┐
+                         │   CLIENT-SIDE INPUT  │
+                         │   Password captured  │
+                         │   locally in browser │
+                         └──────────┬───────────┘
+                                    │
+                                    ▼
+                  ┌─────────────────────────────────┐
+                  │       PASSWORD ANALYZER         │
+                  └────────────────┬────────────────┘
+                                   │
+                 ┌─────────────────┼─────────────────┐
+                 │                 │                 │
+                 ▼                 ▼                 ▼
+        ┌────────────────┐ ┌───────────────┐ ┌─────────────────┐
+        │ Character      │ │ Pattern       │ │ Entropy         │
+        │ Analysis       │ │ Detection     │ │ Calculation     │
+        └───────┬────────┘ └───────┬───────┘ └────────┬────────┘
+                │                  │                  │
+                │                  │                  │
+                ▼                  ▼                  ▼
+        • Length             • Common Password   • Character Pool
+        • Lowercase          • Sequences         • Entropy
+        • Uppercase          • Keyboard Patterns • Effective Entropy
+        • Numbers            • Repetition
+        • Symbols            • Predictable Year
+                             • Substitution
+                                   │
+                                   ▼
+                         ┌──────────────────────┐
+                         │  SECURITY SCORING    │
+                         │                      │
+                         │ • Base Score         │
+                         │ • Pattern Penalties  │
+                         │ • Effective Entropy  │
+                         └──────────┬───────────┘
+                                    │
+                                    ▼
+                         ┌──────────────────────┐
+                         │ CRACK RESISTANCE     │
+                         │      ESTIMATION      │
+                         │                      │
+                         │ Estimated automated  │
+                         │ attack resistance    │
+                         └──────────┬───────────┘
+                                    │
+                                    ▼
+                  ┌─────────────────────────────────┐
+                  │       PASSWORD AUTOPSY          │
+                  │                                 │
+                  │ Why is the password strong or  │
+                  │ predictable?                    │
+                  └────────────────┬────────────────┘
+                                   │
+                                   ▼
+                         ┌──────────────────────┐
+                         │ SECURITY DASHBOARD   │
+                         │                      │
+                         │ Score                │
+                         │ Rating               │
+                         │ Entropy              │
+                         │ Crack Resistance     │
+                         │ Detected Patterns    │
+                         │ Recommendations      │
+                         └──────────┬───────────┘
+                                    │
+                                    ▼
+                         ┌──────────────────────┐
+                         │   USER IMPROVES      │
+                         │     PASSWORD         │
+                         └──────────┬───────────┘
+                                    │
+                                    └──────────────┐
+                                                   │
+                                                   ▼
+                                          Re-analyze Password
