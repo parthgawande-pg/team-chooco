@@ -1,16 +1,74 @@
-# React + Vite
+# PasswordShield
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Password Strength & Security Analysis Platform
 
-Currently, two official plugins are available:
+PasswordShield is a modern cybersecurity web application designed to analyze password strength and identify common security weaknesses.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The application evaluates password length, character diversity, entropy, predictable patterns, and estimated resistance against automated attacks. It also provides security recommendations to help users create stronger passwords.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+##  Live Demo
 
-## Expanding the ESLint configuration
+ ** Netlify Deployment:**  
+https://passecurityanalyzer.netlify.app
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+---
+
+##  Features
+
+###  Password Security Analysis
+- Password strength scoring
+- Password length analysis
+- Uppercase character detection
+- Lowercase character detection
+- Number detection
+- Special character detection
+- Character diversity analysis
+
+###  Pattern Detection
+PasswordShield checks for potentially predictable constructions such as:
+
+- Common passwords
+- Keyboard patterns
+- Sequential characters
+- Repeated characters
+- Repeated patterns
+- Predictable years
+- Predictable character substitutions
+
+###  Security Metrics
+
+The dashboard provides:
+
+- Overall security score
+- Password strength level
+- Theoretical entropy
+- Effective entropy
+- Estimated crack resistance
+- Character type analysis
+- Security recommendations
+
+###  Privacy Monitoring
+
+PasswordShield is designed around a privacy-first approach.
+
+Password analysis is performed locally in the browser whenever possible, so the password does not need to be sent to an external server for basic analysis.
+
+###  Modern Cybersecurity UI
+
+The application includes:
+
+- Dark cybersecurity interface
+- Animated background effects
+- Interactive cards
+- Animated progress indicators
+- Hover effects
+- Security status indicators
+- Responsive design
+- Mobile-friendly interface
+
+---
+
